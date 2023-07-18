@@ -2,7 +2,7 @@ window.onload = async function () {
   // Get the config from config.json
   const config = await fetch("./config.json").then((res) => res.json());
 
-  const serverURL = config.serverURL;
+  const serverURL = config.serverUrl;
 
   // Generate token using token generator server
   document.getElementById("generateToken").onclick = async function () {
@@ -17,7 +17,7 @@ window.onload = async function () {
     switch (tokenType) {
       case "rtc":
         token = await fetch(
-          "https://agora-token-gen-server.vercel.app/api/main?type=rtc",
+          serverURL + "?type=rtc",
           {
             method: "POST",
             headers: {
@@ -46,7 +46,7 @@ window.onload = async function () {
         break;
       case "rtm":
         token = await fetch(
-          "https://agora-token-gen-server.vercel.app/api/main?type=rtm",
+          serverURL + "?type=rtm",
           {
             method: "POST",
             headers: {
@@ -75,7 +75,7 @@ window.onload = async function () {
         break;
       case "chat":
         token = await fetch(
-          "https://agora-token-gen-server.vercel.app/api/main?type=chat",
+          serverURL + "?type=chat",
           {
             method: "POST",
             headers: {
