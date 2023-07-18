@@ -1,0 +1,215 @@
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+div {
+  text-align: left;
+}
+label {
+  font-size: 20px;
+  text-align: left;
+}
+li {
+  text-align: left;
+  font-size: 20px;
+}
+body {
+  margin: 0;
+}
+.button {
+  background-color: #ffffff;
+  border: 1.5px solid #099dfd;
+  border-radius: 20px;
+  color: #099dfd;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-top: 15px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 150px;
+  height: 30px;
+}
+.button:hover {
+  background-color: #099dfd;
+  color: #ffffff;
+}
+/*************************** /
+  / HOME PAGE STYLING         /
+  /**************************/
+.homepage {
+  font-family: "sans-serif";
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration-style: solid;
+  color: #212121;
+}
+
+/*************************** /
+  / NAVBAR STYLING STARTS     /
+  /**************************/
+
+.navbar {
+  display: flex;
+  background-color: #ffffff;
+  color: #212121;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LOGO */
+.logo {
+  padding-top: 22px;
+  padding-left: 10px;
+}
+
+/* NAVBAR MENU */
+.maintitle {
+  position: absolute;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+  z-index: -1;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  z-index: -1;
+  /* Whatever width you want */
+}
+
+.inner-horizontal {
+  padding-top: 5px;
+  display: table;
+  margin: 0 auto;
+}
+
+.outer-horizontal {
+  width: 100%;
+}
+
+.button_row {
+  padding-left: 40px;
+}
+
+select {
+  height: 30px;
+  width: 235px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1.5px solid #d1d1d1;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+input {
+  height: 25px;
+  width: 228px;
+  background-color: #ffffff;
+  border: 1.5px solid #d1d1d1;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.container {
+  margin-top: 10px;
+  margin-left: 36px;
+  width: 725px;
+}
+
+.textbox {
+  width: 700px;
+  height: 30px;
+  border: none;
+}
+.label {
+	padding: 10px;
+	font-size: 18px;
+	color: #111;
+}
+.copy-text {
+	position: relative;
+	padding: 10px;
+	background: #fff;
+	border: 1.5px solid #d1d1d1;
+	border-radius: 10px;
+	display: flex;
+}
+.copy-text input.text {
+	padding: 10px;
+	font-size: 18px;
+	color: #555;
+	border: none;
+	outline: none;
+}
+.copy-text button {
+	width: 35px;
+  height: 35px;
+  margin: auto;
+  margin-bottom: 1px;
+	background: #099dfd;
+	color: #fff;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.copy-text button:active {
+	background: #809ce2;
+}
+.copy-text button:before {
+	content: "Copied";
+	position: absolute;
+	top: -45px;
+	right: 0px;
+	background: #5c81dc;
+	padding: 8px 10px;
+	border-radius: 20px;
+	font-size: 15px;
+	display: none;
+}
+.copy-text button:after {
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 25px;
+	width: 10px;
+	height: 10px;
+	background: #5c81dc;
+	transform: rotate(45deg);
+	display: none;
+}
+.copy-text.active button:before,
+.copy-text.active button:after {
+	display: block;
+}
+.fa-copy {
+  margin-bottom: 4px;
+}

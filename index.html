@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signaling reference app</title>
+    <script src="./index.js" type="module"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- LOGO -->
+      <div class="logo">
+        <img
+          src="https://www.agora.io/en/wp-content/themes/agora-main/images/agora-logo.svg"
+        />
+      </div>
+      <div class="maintitle">
+        <h1>Token Builder</h1>
+      </div>
+    </nav>
+    <p />
+    <label class="inner-horizontal label"
+      >Generate authentication tokens to securely connect to any Agora
+      Product.</label
+    >
+    <div class="outer-horizontal">
+      <div class="inner-horizontal">
+        <ol>
+          <li>
+            Login to <a href="https://console.agora.io/" target="_blank">Agora Console</a> and
+            select the project you are developing for.
+          </li>
+          <li>Add the information for you app:</li>
+        </ol>
+        <div class="button_row">
+          <select class="ss" name="Product" id="product">
+            <option value="rtm">Signaling - Login</option>
+            <option value="rtc">Signaling - Stream Channel</option>
+            <option value="chat">Chat</option>
+          </select>
+          <input type="text" placeholder="Write in your App ID" id="appId" />
+          <input
+            type="text"
+            placeholder="Write in your App Certificate"
+            id="appCert"
+          />
+        </div>
+        <ol start="3">
+          <li>Customize for your User:</li>
+        </ol>
+        <div class="button_row">
+          <input type="text" placeholder="Add the User ID" id="userId" />
+          <input
+            type="text"
+            placeholder="Add the channel name"
+            id="channelName"
+          />
+          <input
+            type="text"
+            placeholder="Token expiration time (in seconds)"
+            id="expiry"
+          />
+        </div>
+        <div class="inner-horizontal">
+          <button class="button" id="generateToken">Generate Token</button>
+        </div>
+        <div class="inner-horizontal">
+          <div class="container">
+            <div class="copy-text">
+              <input type="text" class="textbox" id="tokenText" value="Your token" />
+              <button><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
