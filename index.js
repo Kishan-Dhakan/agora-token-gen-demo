@@ -1,5 +1,3 @@
-import "./styles.css";
-
 const serverURL = "https://agora-token-generator-demo.vercel.app/api/main";
 
 if (document.getElementById("product").value.toString() === "chat") {
