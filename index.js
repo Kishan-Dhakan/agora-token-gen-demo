@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const serverURL = "https://agora-token-gen-backend.vercel.app/api/main";
+const serverURL = "https://agora-token-generator-demo.vercel.app/api/main";
 
 if (document.getElementById("product").value.toString() === "chat") {
   document.getElementById("channelName").hidden = true;
