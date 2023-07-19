@@ -7,7 +7,7 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	enableCors(&w)
+	enableCors(&w, r)
 
 	// Handle preflight request
 	if r.Method == "OPTIONS" {
@@ -27,6 +27,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func enableCors(w *http.ResponseWriter) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+func enableCors(w *http.ResponseWriter, r *http.Request) {
+	origin := r.Header.Get("Origin")
+	if origin == "https://agora-token-generator-demo.vercel.app" {
+		(*w).Header().Set("Access-Control-Allow-Origin", origin)
+		(*w).Header().Set("Access-Control-Allow-Methods", "POST")
+		(*w).Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	}
 }
