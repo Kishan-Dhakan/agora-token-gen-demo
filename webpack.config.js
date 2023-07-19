@@ -1,41 +1,34 @@
 const path = require("path");
-const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   entry: {
     index: "./index.js",
   },
   plugins: [
-    new HtmlBundlerPlugin({
-      js: {
-        filename: 'assets/js/[name].[contenthash:8].js',
-      },
-      css: {
-        filename: 'assets/css/[name].[contenthash:8].js',
-      }
-    })
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+      filename: "./index.html",
+    }),
+    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
-      // Note: enable processing of HTML files from entry
       {
-        test: /\.html$/,
-        loader: HtmlBundlerPlugin.loader, // HTML loader
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
-      // styles
       {
-        test: /\.(css|sass|scss)$/,
-        use: ['css-loader', 'sass-loader'],
+        test: /\.html$/i,
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: true },
+          },
+        ],
       },
-      // images
-      {
-        test: /\.(png|jpe?g|svg|ico)/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'assets/img/[name].[hash:8][ext]',
-        },
-    },
     ],
   },
   output: {

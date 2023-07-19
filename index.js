@@ -1,9 +1,8 @@
+import './styles.css';
+
+const serverURL = "https://agora-token-gen-backend.vercel.app/api/main";
+
 window.onload = async function () {
-  // Get the config from config.json
-  const config = await fetch("./config.json").then((res) => res.json());
-
-  const serverURL = config.serverUrl;
-
   // Generate token using token generator server
   document.getElementById("generateToken").onclick = async function () {
     let tokenType = document.getElementById("product").value.toString();
