@@ -1,6 +1,12 @@
-import './styles.css';
+import "./styles.css";
 
 const serverURL = "https://agora-token-gen-backend.vercel.app/api/main";
+
+if (document.getElementById("product").value.toString() === "chat") {
+  document.getElementById("channelName").hidden = true;
+} else {
+  document.getElementById("channelName").hidden = false;
+}
 
 window.onload = async function () {
   // Generate token using token generator server
@@ -10,28 +16,25 @@ window.onload = async function () {
     let appCert = document.getElementById("appCert").value.toString();
     let uid = document.getElementById("userId").value.toString();
     let channelName = document.getElementById("channelName").value.toString();
-    let tokenExpiry = document.getElementById("expiry").value.toString();
+    let tokenExpiry = Number(document.getElementById("expiry").value.toString());
     let token = "";
 
     switch (tokenType) {
       case "rtc":
-        token = await fetch(
-          serverURL + "?type=rtc",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              appId: appId,
-              certificate: appCert,
-              channel: channelName,
-              uid: uid,
-              role: "publisher",
-              expire: 3600,
-            }),
-          }
-        )
+        token = await fetch(serverURL + "?type=rtc", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            appId: appId,
+            certificate: appCert,
+            channel: channelName,
+            uid: uid,
+            role: "publisher",
+            expire: tokenExpiry,
+          }),
+        })
           .then((response) => response.json())
           .then((data) => {
             // Process the response data here
@@ -44,23 +47,20 @@ window.onload = async function () {
           });
         break;
       case "rtm":
-        token = await fetch(
-          serverURL + "?type=rtm",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              appId: appId,
-              certificate: appCert,
-              channel: channelName,
-              uid: uid,
-              role: "publisher",
-              expire: 3600,
-            }),
-          }
-        )
+        token = await fetch(serverURL + "?type=rtm", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            appId: appId,
+            certificate: appCert,
+            channel: channelName,
+            uid: uid,
+            role: "publisher",
+            expire: tokenExpiry,
+          }),
+        })
           .then((response) => response.json())
           .then((data) => {
             // Process the response data here
@@ -73,23 +73,19 @@ window.onload = async function () {
           });
         break;
       case "chat":
-        token = await fetch(
-          serverURL + "?type=chat",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              appId: appId,
-              certificate: appCert,
-              channel: channelName,
-              uid: uid,
-              role: "publisher",
-              expire: 3600,
-            }),
-          }
-        )
+        token = await fetch(serverURL + "?type=chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            appId: appId,
+            certificate: appCert,
+            uid: uid,
+            role: "publisher",
+            expire: tokenExpiry,
+          }),
+        })
           .then((response) => response.json())
           .then((data) => {
             // Process the response data here
@@ -103,6 +99,14 @@ window.onload = async function () {
         break;
       default:
         break;
+    }
+  };
+
+  document.getElementById("product").onclick = async function () {
+    if (document.getElementById("product").value.toString() === "chat") {
+      document.getElementById("channelName").hidden = true;
+    } else {
+      document.getElementById("channelName").hidden = false;
     }
   };
 

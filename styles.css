@@ -182,14 +182,14 @@ input {
 }
 
 .copy-text button:active {
-	background: #809ce2;
+	background: #099dfd;
 }
 .copy-text button:before {
 	content: "Copied";
 	position: absolute;
 	top: -45px;
 	right: 0px;
-	background: #5c81dc;
+	background: #099dfd;
 	padding: 8px 10px;
 	border-radius: 20px;
 	font-size: 15px;
@@ -202,7 +202,7 @@ input {
 	right: 25px;
 	width: 10px;
 	height: 10px;
-	background: #5c81dc;
+	background: #099dfd;
 	transform: rotate(45deg);
 	display: none;
 }
