@@ -1,43 +1,46 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: {
-    index: "./index.js",
-  },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./index.html",
-      filename: "./index.html",
+    new HtmlBundlerPlugin({
+      entry: {
+        // define templates here
+        index: "./index.html",
+      },
+      js: {
+        // output filename of JS extracted from source script specified in `<script>`
+        filename: "js/[name].[contenthash:8].js",
+      },
+      css: {
+        // output filename of CSS extracted from source file specified in `<link>`
+        filename: "css/[name].[contenthash:8].css",
+      },
+      minify: "auto", // minify html in production mode only
     }),
-    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
-        test: /\.html$/i,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true },
-          },
-        ],
+        use: ["css-loader"],
       },
     ],
   },
   output: {
-    filename: "bundle.js",
     path: path.resolve(__dirname, "./dist"),
   },
   devServer: {
-    static: path.resolve(__dirname, "./"),
+    static: path.resolve(__dirname, "./dist"),
     compress: true,
     port: 9000,
+    // enable live reload after changes in source files
+    watchFiles: {
+      paths: ['./**/*.*'],
+      options: {
+        usePolling: true,
+      },
+    },
   },
 };
