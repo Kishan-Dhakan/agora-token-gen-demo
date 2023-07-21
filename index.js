@@ -136,15 +136,15 @@ window.onload = async function () {
           .then((data) => {
             // Process the response data here
             console.log(data);
-            document.getElementById("tokenText").value = data.sdkToken;
+            document.getElementById("tokenText").value = data.roomToken;
           })
           .catch((error) => {
             // Handle any errors that occur during the request
             console.error(error);
           });
         break;
-      case "whiteboard-room":
-        token = await fetch(serverURL + "?type=whiteboard-room", {
+      case "whiteboard-task":
+        token = await fetch(serverURL + "?type=whiteboard-task", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -161,7 +161,7 @@ window.onload = async function () {
           .then((data) => {
             // Process the response data here
             console.log(data);
-            document.getElementById("tokenText").value = data.sdkToken;
+            document.getElementById("tokenText").value = data.taskToken;
           })
           .catch((error) => {
             // Handle any errors that occur during the request
