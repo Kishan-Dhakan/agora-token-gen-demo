@@ -24,6 +24,12 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		service.ChatToken(w, r)
 	} else if reqType == "rtc" {
 		service.RtcToken(w, r)
+	} else if reqType == "whiteboard-sdk" {
+		service.WhiteboardSDKToken(w, r)
+	} else if reqType == "whiteboard-room" {
+		service.WhiteboardRoomToken(w, r)
+	} else if reqType == "whiteboard-task" {
+		service.WhiteboardTaskToken(w, r)
 	}
 }
 

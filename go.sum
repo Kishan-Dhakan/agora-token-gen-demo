@@ -1,6 +1,10 @@
-github.com/AgoraIO-Community/agora-token-gen v0.2.1 h1:0GkzLCqxvjkATbjDPxlb+keqaIU3TYOOv7dFpJVD3+4=
-github.com/AgoraIO-Community/agora-token-gen v0.2.1/go.mod h1:CPok/T3r5ygzqM5CZJ+PVKM80H5OLWWfM/C7TjrCiYg=
+github.com/AgoraIO-Community/agora-token-gen v0.2.2-0.20230720200526-e5ce5c7a4f65 h1:4mfwE+OwU6B8bO922lDEsvsV+P7vk2KQ8qyRADnZyoM=
+github.com/AgoraIO-Community/agora-token-gen v0.2.2-0.20230720200526-e5ce5c7a4f65/go.mod h1:IBzp1PRng7ARbLPoiKdO5BWhp9thI/7294e+NW2KhNg=
 github.com/AgoraIO-Community/go-tokenbuilder v1.2.0 h1:Ktlv7n8PhmSap3tgNxjNHO8hj/qydUIj4UOFF8tRxos=
 github.com/AgoraIO-Community/go-tokenbuilder v1.2.0/go.mod h1:xqPdaiFG00M1hNN/CCYh8j+NTmkiJsQtqYdf4YAlncA=
+github.com/google/uuid v1.1.2 h1:EVhdT+1Kseyi1/pUmXKaFxYsDNy9RQYkMWRH68J/W7Y=
+github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
+github.com/netless-io/netless-token/golang v0.0.0-20220615025308-771ff36bfc1e h1:Ax7sgcxR2imc/YLr5LlWWvnC9jQvL1pF49Iixgn6V5g=
+github.com/netless-io/netless-token/golang v0.0.0-20220615025308-771ff36bfc1e/go.mod h1:S1Qba7Owf/1hqvt59TLA2oU++JlBcJrQnvsJJ/SJhFA=
